@@ -1,4 +1,7 @@
 <template>
+  <div class="top-left-link">
+      <router-link to="soumission-form">Send the submission ! </router-link>
+    </div>
   <div class="register-page">
     <!-- Title -->
     <h1 class="page-title">Create Account</h1>
@@ -26,6 +29,15 @@
       </form>
     </div>
   </div>
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
 </template>
 
 <script>
@@ -55,9 +67,28 @@ export default {
 </script>
 
 <style scoped>
+  .top-left-link {
+  position: fixed;   
+  top: 20px;        
+  right: 20px;        
+  z-index: 1000;     
+}
+.top-left-link a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  font-size: 16px;
+  background: #b8c2d133;
+  border-radius: 5px;
+}
+.top-left-link a:hover {
+  background: #534bbc;
+  color: #002244;
+}
+
 .register-page {
   min-height: 110vh;
-  background-color: white; /* الخلفية بيضاء */
+  background-color: white; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,5 +139,23 @@ export default {
 
 .register-form button:hover {
   background: #193f66;
+}
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
 }
 </style>

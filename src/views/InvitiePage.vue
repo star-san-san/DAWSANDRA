@@ -1,20 +1,18 @@
 <template>
   <div class="content-area">
-    <!-- عنوان الصفحة -->
+    <div class="top-left-link">
+      <router-link to="invite-form">Send an invitation ! </router-link>
+    </div>
     <div class="title-container">
       <h1 class="left-title">Guest / Speaker Details</h1>
     </div>
-
-    <!-- جدول المعلومات -->
     <div class="table-warpper">
       <table class="proposals-table">
         <thead>
           <tr>
             <th>Name</th>
             <th>Role</th>
-            <th>Institution</th>
-            <th>Session / Talk</th>
-            <th>Date & Time</th>
+            <th>email</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -22,9 +20,7 @@
           <tr v-for="guest in guests" :key="guest.id">
             <td>{{ guest.name }}</td>
             <td>{{ guest.role }}</td>
-            <td>{{ guest.institution }}</td>
-            <td>{{ guest.session }}</td>
-            <td>{{ guest.date }}</td>
+            <td>{{ guest.email }}</td>
             <td>
               <button class="pdf-btn" @click="downloadPdf(guest)">PDF</button>
             </td>
@@ -33,6 +29,16 @@
       </table>
     </div>
   </div>
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
+
 </template>
 
 <script>
@@ -44,18 +50,14 @@ export default {
           id: 1,
           name: "Dr. Ahmed Ali",
           role: "Invited Speaker",
-          institution: "University of Cairo",
-          session: "AI in Biology",
-          date: "15-03-2026 | 09:00 AM",
+          email: "ahmedaa@gmail.com",
           pdf: "link-to-pdf"
         },
         {
           id: 2,
           name: "Dr. Samira Khaled",
           role: "Guest Moderator",
-          institution: "University of Tunis",
-          session: "Round Table: Future of Medicine",
-          date: "16-03-2026 | 02:00 PM",
+          email: "samira@gmail.com ",
           pdf: "link-to-pdf"
         }
       ]
@@ -71,6 +73,24 @@ export default {
 </script>
 
 <style scoped>
+    .top-left-link {
+  position: fixed;   
+  top: 20px;        
+  right: 20px;        
+  z-index: 1000;     
+}
+.top-left-link a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: bold;
+  font-size: 16px;
+  background: #b8c2d133;
+  border-radius: 5px;
+}
+.top-left-link a:hover {
+  background: #534bbc;
+  color: #002244;
+}
 .title-container {
   display: flex;
   justify-content: flex-start;
@@ -120,4 +140,23 @@ export default {
 .pdf-btn:hover {
   opacity: 0.8;
 }
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
+}
+
 </style>

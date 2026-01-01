@@ -116,6 +116,15 @@
       <!--<pre>{{ event }}</pre>-->
     
   </div>
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
 </template>
 
 <script>
@@ -287,7 +296,24 @@ textarea {
   margin-right: 20px;
   width: 160px;
 }
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
 
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
+}
 
 
 </style>

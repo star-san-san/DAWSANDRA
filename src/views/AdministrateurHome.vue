@@ -56,11 +56,11 @@
       <button @click="goTo('/proposals')" >Participants</button>
       <button @click="goTo('/registration')" >Submissions</button>
       <button @click="goTo('/certificates')" >Certificates</button>
+      <button @click="goTo('/invitie')" >Guest / Speaker Details</button>
     </div>
 
   </div>
   <!---->
-  <!-- ضع هذا في نهاية <template> بعد <div class="page-content"> -->
 <footer class="footer-simple">
   <div class="footer-content">
     <p>Instagram: <a href="#">@medcurrent</a></p>

@@ -9,7 +9,7 @@
   </div>
 
   <div class="title-container">
-    <h1 class="left-title">Certificates & Statistics</h1>
+    <h1 class="left-title">Certificates </h1>
   </div>
 
   <!-- Table for participants -->
@@ -40,21 +40,16 @@
     </div>
   </div>
 
-  <!-- Statistics section -->
-  <div class="content-area" style="margin-top: 30px;">
-    <h2>Statistics</h2>
-    <p>Total Submissions: {{ totalSubmissions }}</p>
-    <p>Acceptance Rate: {{ acceptanceRate }}%</p>
-
-    
-
-    <h3>Distribution by Countries:</h3>
-    <ul>
-      <li v-for="(count, country) in countries" :key="country">
-        {{ country }}: {{ count }}
-      </li>
-    </ul>
+  
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
   </div>
+</footer>
 </template>
 
 <script>
@@ -69,11 +64,6 @@ export default {
       ],
       totalSubmissions: 100,
       acceptanceRate: 80,
-      countries: {
-        "Algeria": 50,
-        "Tunisia": 30,
-        "Morocco": 20
-      }
     };
   },
   computed: {
@@ -187,5 +177,23 @@ export default {
 
 .pdf-btn:hover {
   background-color: #094a86;
+}
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
 }
 </style>

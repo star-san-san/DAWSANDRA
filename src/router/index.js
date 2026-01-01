@@ -16,26 +16,60 @@ import Home from "@/views/Home.vue";
 import PublicEvents from "@/views/PublicEvents.vue";
 import SignupEvent from "@/views/SignupEvent.vue";
 
+import EvaluationMembre from "@/views/EvaluationMembre.vue";
 import membrecomithome from "@/views/membrecomithome.vue";
+import Profile from "@/views/Profile.vue";
+import PublicDetilsEvent from "@/views/PublicDetilsEvent.vue";
+import SoumissionFormulare from "@/views/SoumissionFormulare.vue";
+import InvitiePage from "@/views/InvitiePage.vue";
+import InviteForm from "@/views/InviteForm.vue";
+//import SoumissionParticipant from "@/views/SoumissionParticipant.vue";
+//import SoumissionFormulare from "@/views/SoumissionFormulare.vue";
+
 
 
 
 const routes = [
-  {
+{
   path: "/adminHome",
   name: "adminHome",
   component: AdministrateurHome
 },
- {
-    path: "/membrecomithome",
+{
+    path: "/invitie",
+    name: "invitie",
+    component: InvitiePage
+  },
+  {
+    path: "/invite-form",
+    name: "invite-form",
+    component: InviteForm
+  },
+{
+    path: "/evaluatin-membre",
+    name: "evaluatin-membre",
+    component: EvaluationMembre
+  },
+  {
+    path: "/profile",
+    name: "profile",
+    component: Profile
+  },
+  {
+    path: "/",
     name: "membrecomithome",
     component: membrecomithome
   },
   {
-    path: "/",
+    path: "/home",
     name: "home",
     component: Home
   },
+  {
+  path: "/public-event-details",
+  name: "public-event-details",
+  component: PublicDetilsEvent
+},
    {
   path: "/public-events",
   name: "public-events",
@@ -55,7 +89,7 @@ const routes = [
   
   {
     path: "/create-event",
-    name: "createEvent",
+    name: "create-event",
     component: AdministrateurCreateEvent
   },
   {
@@ -83,7 +117,12 @@ const routes = [
   path: "/certificates",
   name: "certificates",
   component: CertificatesStatistics 
-}
+},
+{
+  path: "/soumission-form",
+  name: "soumission-form",
+  component: SoumissionFormulare
+}  
 ];
 
 const router = createRouter({

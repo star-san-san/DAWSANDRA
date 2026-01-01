@@ -66,15 +66,24 @@
 
         </p>
       </form>
+       <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
     </FullSection>
   </div>
+  
 </template>
 
 <script>
 import FullSection from "../components/FullSection.vue";
 import api from "../services/api";
 
-// الصور
 import bg1 from "@/assets/1.png";
 import bg2 from "@/assets/2.png";
 import bg3 from "@/assets/3.png";
@@ -93,7 +102,6 @@ export default {
       bg4,
       bg5,
 
-      // بيانات تسجيل الدخول
       loginData: {
         email: "",
         mot_de_passe: ""
@@ -106,10 +114,8 @@ methods: {
     try {
       const response = await api.post("/login", this.loginData);
 
-      // حفظ التوكن
       localStorage.setItem("token", response.data.token);
 
-      // استخراج الدور
       const role = response.data.user.role;
 
       
@@ -144,9 +150,7 @@ methods: {
 
 
 <style>
-/* ========================================================================= */
-/* 📌 1. التنسيقات الأساسية وضمان الارتفاع (Base & Height Setup)             */
-/* ========================================================================= */
+
 body {
   margin: 0;
   padding: 0;
@@ -159,20 +163,16 @@ body {
   min-height: 100%;
 }
 
-/* ========================================================================= */
-/* 📌 2. التوسيط والمحاذاة لليسار (Alignment & Centering)                     */
-/* ========================================================================= */
 
-/* يطبق على الأقسام التي تحتاج توسيط عمودي ومحاذاة لليسار */
 .left-aligned-section {
   display: flex !important;
   align-items: center !important; /* توسيط عمودي */
   justify-content: flex-start !important; /* محاذاة لليسار */
-  padding-left: 5%;
+  padding-left: 2%;
   height: 100vh !important;
 }
 
-/* التنسيق الداخلي لعناصر FullSection للتأكد من المحاذاة لليسار */
+
 .left-aligned-section .content {
   justify-content: flex-start !important;
   text-align: left !important;
@@ -181,11 +181,8 @@ body {
   width: 100%;
 }
 
-/* ========================================================================= */
-/* 📌 3. تنسيقات حجم الخط (Typography Sizes)                                 */
-/* ========================================================================= */
 
-/* الحجم الأصلي للنص (القسم الأول) */
+
 .big-text {
   font-size: 100px;
   font-weight: 700;
@@ -199,7 +196,6 @@ body {
   margin: 0;
 }
 
-/* الحجم المصغر للنص (القسم الثاني والثالث) */
 .big-text-small {
   font-size: 60px; 
   font-weight: 700;
@@ -213,7 +209,7 @@ body {
   margin: 0;
 }
 
-/* ضمان تطبيق الحجم المصغر بقوة للقسم الثاني والثالث */
+
 .left-aligned-section h2.big-text-small,
 .left-aligned-section h3.big-text-small {
   font-size: 60px !important;
@@ -223,9 +219,7 @@ body {
   font-size: 18px !important;
 }
 
-/* ========================================================================= */
-/* 📌 4. تنسيقات القسم الأول (Home Section Styles)                           */
-/* ========================================================================= */
+ 
 .section1-text {
   color: white;
   text-align: left;
@@ -234,11 +228,6 @@ body {
 }
 
 
-/* ========================================================================= */
-/* 📌 5. تنسيقات القسم الثالث (Image & Button Group)                        */
-/* ========================================================================= */
-
-/* ضمان ترتيب المحتوى الداخلي لـ FullSection عمودياً */
 .left-aligned-section.content-column .content {
   flex-direction: column !important;
   align-items: flex-start !important;
@@ -252,10 +241,9 @@ body {
     align-items: flex-start;
 }
 
-/* تنسيق عنصر الصورة + النص (بجانب بعضهما) */
 .image-item {
     display: flex;
-    align-items: center; /* توسيط عمودي للصورة والنص */
+    align-items: center; 
     gap: 20px;
 }
 
@@ -266,7 +254,6 @@ body {
     object-fit: cover;
 }
 
-/* ترتيب النص والزر تحت بعض */
 .text-and-button {
     display: flex;
     flex-direction: column;
@@ -274,7 +261,6 @@ body {
     gap: 10px;
 }
 
-/* تنسيق الزر */
 .register-button {
     padding: 10px 20px;
     background: white;
@@ -290,10 +276,6 @@ body {
     background: #200cb3ff;
 }
 
-
-/* ========================================================================= */
-/* 📌 6. تنسيقات تسجيل الدخول (Login Box)                                   */
-/* ========================================================================= */
 .login-box {
   display: flex;
   flex-direction: column;
@@ -350,5 +332,41 @@ body {
 .see-more-link:hover {
   color: #200cb3ff;
 }
+/*footer*/
+footer.footer-simple {
+  position: relative;
+  margin-left: calc(-50vw + 50%); /* تراجع التباعد الأفقي */
+  margin-right: calc(-50vw + 50%);
+  width: 100vw !important;  
+  left: 0 !important;       
+  padding: 15px 40px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.footer-simple {
+  width: 100vw;
+  background: #002244;
+  color: white;
+  padding:20px 40px;
+  text-align: center;
+  margin-top: 120px;
+  box-sizing: border-box;
+  position: relative;
+  left:0;
+}
+.footer-content {
+  width: 1200px;
+}
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
+}
+
 
 </style>

@@ -77,22 +77,27 @@
         <table class="proposals-table">
           <thead>
             <tr>
-              <th></th>
-              <th>Status</th>
-              <th>Type</th>
               <th>Proposal Title</th>
+              <th>Type</th>
+              <th> Status</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="(row, idx) in filteredRows" :key="idx">
+              <td class="title-td">{{ row.title }}</td>
+              <td class="type-td">{{ row.type }}</td>
+              <td class="status-td">{{ row.status }}</td>
               <td class="action-td">
                 <button class="action-btn" :class="row.status === 'Evaluated' ? 'view' : 'evaluate'">
                   {{ row.status === 'Evaluated' ? 'View' : 'Evaluate' }}
                 </button>
               </td>
-              <td class="status-td">{{ row.status }}</td>
-              <td class="type-td">{{ row.type }}</td>
-              <td class="title-td">{{ row.title }}</td>
+            <td class="action-td">
+              <router-link :to="{ name: 'evaluatin-membre', params: { id: row.id } }">
+              <button class="acction-btn" >open</button>
+              </router-link>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -121,6 +126,15 @@
       </aside>
     </div>
   </div>
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
 </template>
 <script>
 import profilePlaceholder from "@/assets/10.jpg"; 
@@ -149,10 +163,10 @@ export default {
       editableEmail: "Mbenali@gmail.com",
       editablePhone: "07957011",
       rows: [
-        { status: "Pending", type: "Poster", title: "Blood Gas Analysis" },
-        { status: "Pending", type: "Oral", title: "Study on Diabetes in Adults" },
-        { status: "Evaluated", type: "Oral", title: "Modeling Respiratory Diseases" },
-        { status: "Evaluated", type: "Oral", title: "Modeling Respiratory Diseases" }
+        {title: "Blood Gas Analysis" , type: "Poster", status: "Pending" },
+        { title: "Study on Diabetes in Adults", type: "Oral", status: "Pending" },
+        {title: "Modeling Respiratory Diseases" , type: "Oral",status: "Evaluated" },
+        {title: "Modeling Respiratory Diseases" , type: "Oral",status: "Evaluated" }
       ],
     };
   },
@@ -423,7 +437,15 @@ border-bottom: 3px solid #0b3a72;
 .action-td {
   width: 120px;
 }
-
+.acction-btn{
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  background:#0b3a72 ;
+}
 .action-btn {
   border: none;
   padding: 12px 18px;
@@ -509,4 +531,23 @@ border-bottom: 3px solid #0b3a72;
   .content-area { flex-direction: column; gap: 18px; }
   .progress-area { width: 100%; justify-content: flex-end; }
 }
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
+}
+
 </style>

@@ -36,7 +36,7 @@
             <td>{{ event.dates }}</td>
             <td>{{ event.location }}</td>
             <td>
-              <router-link :to="{ name: 'event-details', params: { id: event.id } }">
+              <router-link :to="{ name: 'public-event-details', params: { id: event.id } }">
               <button class="details-btn" >Details</button>
               <!--<button class="details-btn" @click="viewDetails(event)">Details</button>
 -->
@@ -59,8 +59,11 @@
             <td class="title-col">{{ event.title }}</td>
             <td class="date-col">{{ event.dates }}</td>
             <td class="location-col">{{ event.location }}</td>
-            <td>
-              <button class="details-btn" @click="goTo('/event-details')">Details</button>
+           <td>
+            <router-link :to="{ name: 'public-event-details', params: { id: event.id } }">
+            <button class="details-btn" >Details</button>
+            </router-link>
+              
             </td>
           </tr>
         </tbody>
@@ -69,6 +72,15 @@
     </div>
 
   </div>
+  <!--foter-->
+    <footer class="footer-simple">
+  <div class="footer-content">
+    <p>Instagram: <a href="#">@medcurrent</a></p>
+    <p>Facebook: <a href="#">@MedCurrent</a></p>
+    <p>TikTok: <a href="#">@medcurrent</a></p>
+    <p>Phone: +213 123 456 789</p>
+  </div>
+</footer>
 </template>
 
 
@@ -284,5 +296,23 @@ export default {
  height: 1px ;
  background: #bfbfbf;
  margin: 30px 0 ;
+}
+/*footer*/
+.footer-simple {
+  background: #002244;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin-top: 120px;
+}
+
+.footer-simple a {
+  color: white;
+  text-decoration: underline;
+  margin: 0 5px;
+}
+
+.footer-simple a:hover {
+  color: #ffd700;
 }
 </style>
